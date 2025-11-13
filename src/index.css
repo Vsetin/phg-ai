@@ -837,9 +837,9 @@ body {
 .sidebar-stats {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
-  padding: 16px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
@@ -848,8 +848,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   text-align: center;
+  padding: 0 8px;
 }
 
 .stat-value {
@@ -1232,10 +1233,14 @@ body {
   
   .sidebar-stats {
     flex-direction: row;
-    gap: 20px;
+    gap: 24px;
     padding: 0;
     border: none;
     width: auto;
+  }
+  
+  .stat-item {
+    padding: 0 4px;
   }
   
   .card-category {
@@ -1307,9 +1312,9 @@ body {
   
   .sidebar-stats {
     flex-direction: row;
-    gap: 12px;
+    gap: 16px;
     width: 100%;
-    padding: 16px 0;
+    padding: 20px 0;
     border-bottom: 1px solid var(--border-light);
     justify-content: space-around;
   }
@@ -1317,6 +1322,7 @@ body {
   .stat-item {
     flex: 1;
     text-align: center;
+    padding: 0 8px;
   }
   
   .stat-value {
