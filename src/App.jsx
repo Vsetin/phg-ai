@@ -1,6 +1,5 @@
 import './index.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import html2pdf from 'html2pdf.js'
 
 function App() {
@@ -468,23 +467,14 @@ function App() {
         </section>
 
       <div className="copy-section">
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <button 
-            className="copy-button" 
-            onClick={downloadPDF}
-            disabled={downloading}
-            aria-label="Download as PDF"
-          >
-            {downloading ? 'Generating PDF...' : 'Download as PDF'}
-          </button>
-          <Link 
-            to="/email" 
-            className="copy-button email-button"
-            style={{ textDecoration: 'none', display: 'inline-block' }}
-          >
-            View Email Version
-          </Link>
-        </div>
+        <button 
+          className="copy-button" 
+          onClick={downloadPDF}
+          disabled={downloading}
+          aria-label="Download as PDF"
+        >
+          {downloading ? 'Generating PDF...' : 'Download as PDF'}
+        </button>
       </div>
       </main>
   )
