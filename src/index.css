@@ -1352,3 +1352,133 @@ body {
     font-size: 24px;
   }
 }
+
+/* Print/PDF Page Break Controls */
+/* Apply to print media */
+@media print {
+  /* Prevent page breaks inside key elements */
+  .mast,
+  .hero-summary,
+  .card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  /* Allow page breaks between cards, but try to keep each card intact */
+  .card {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  
+  /* Keep header and hero together on first page */
+  .mast {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .hero-summary {
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+  
+  /* Keep footer on last page */
+  .footer {
+    page-break-before: avoid;
+    break-before: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaking inside card sections */
+  .card-sidebar,
+  .card-content,
+  .card-body,
+  .card-results {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Allow breaks between grid items (cards) */
+  .grid {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+  
+  /* Ensure buttons section doesn't break awkwardly */
+  .copy-section {
+    page-break-before: avoid;
+    break-before: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Utility classes for explicit page breaks */
+  .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+  
+  .page-break-after {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+  
+  .no-page-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
+/* Apply same styles when PDF export class is present */
+.pdf-export .mast,
+.pdf-export .hero-summary,
+.pdf-export .card {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+}
+
+.pdf-export .card {
+  page-break-after: auto;
+  break-after: auto;
+}
+
+.pdf-export .mast {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.pdf-export .hero-summary {
+  page-break-after: avoid;
+  break-after: avoid;
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+.pdf-export .footer {
+  page-break-before: avoid;
+  break-before: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.pdf-export .card-sidebar,
+.pdf-export .card-content,
+.pdf-export .card-body,
+.pdf-export .card-results {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.pdf-export .grid {
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+.pdf-export .copy-section {
+  page-break-before: avoid;
+  break-before: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}

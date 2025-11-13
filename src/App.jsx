@@ -12,6 +12,9 @@ function App() {
       const element = document.querySelector('.page')
       if (!element) return
 
+      // Add print class to enable print styles
+      element.classList.add('pdf-export')
+      
       const opt = {
         margin: [0.5, 0.5, 0.5, 0.5],
         filename: 'PHG_AI_Uses_Report.pdf',
@@ -19,16 +22,27 @@ function App() {
         html2canvas: { 
           scale: 2,
           useCORS: true,
-          letterRendering: true
+          letterRendering: true,
+          logging: false,
+          windowWidth: element.scrollWidth,
+          windowHeight: element.scrollHeight
         },
         jsPDF: { 
           unit: 'in', 
           format: 'letter', 
-          orientation: 'portrait' 
+          orientation: 'portrait',
+          compress: true
+        },
+        pagebreak: { 
+          mode: ['avoid-all', 'css'],
+          avoid: ['.card', '.mast', '.hero-summary', '.footer', '.card-sidebar', '.card-content']
         }
       }
 
       await html2pdf().set(opt).from(element).save()
+      
+      // Remove print class after export
+      element.classList.remove('pdf-export')
       setDownloading(false)
     } catch (err) {
       console.error('Failed to generate PDF:', err)
@@ -39,9 +53,9 @@ function App() {
 
   return (
     <main className="page">
-      <header className="mast">
-        <div className="title">
-          <h1>Five ways I used AI to elevate revenue management and strategy</h1>
+        <header className="mast">
+          <div className="title">
+            <h1>Five ways I used AI to elevate revenue management and strategy</h1>
           <div className="title-divider"></div>
           <div className="title-signature-card">
             <div className="title-author-wrapper">
@@ -62,8 +76,8 @@ function App() {
               className="title-company-image"
             />
           </div>
-        </div>
-      </header>
+          </div>
+        </header>
 
       <section className="hero-summary">
         <div className="hero-header">
@@ -162,9 +176,9 @@ function App() {
         </div>
       </section>
 
-      <section className="grid">
-        {/* 1 */}
-        <article className="card">
+        <section className="grid">
+          {/* 1 */}
+          <article className="card">
           <div className="card-sidebar">
             <div className="card-number">01</div>
             <div className="time-saved">
@@ -207,10 +221,10 @@ function App() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
 
-        {/* 2 */}
-        <article className="card">
+          {/* 2 */}
+          <article className="card">
           <div className="card-sidebar">
             <div className="card-number">02</div>
             <div className="time-saved">
@@ -253,10 +267,10 @@ function App() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
 
-        {/* 3 */}
-        <article className="card">
+          {/* 3 */}
+          <article className="card">
           <div className="card-sidebar">
             <div className="card-number">03</div>
             <div className="time-saved">
@@ -300,10 +314,10 @@ function App() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
 
-        {/* 4 */}
-        <article className="card">
+          {/* 4 */}
+          <article className="card">
           <div className="card-sidebar">
             <div className="card-number">04</div>
             <div className="time-saved">
@@ -347,10 +361,10 @@ function App() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
 
-        {/* 5 */}
-        <article className="card">
+          {/* 5 */}
+          <article className="card">
           <div className="card-sidebar">
             <div className="card-number">05</div>
             <div className="time-saved">
@@ -394,9 +408,9 @@ function App() {
               </div>
             </div>
           </div>
-        </article>
+          </article>
 
-        {/* 6 bonus */}
+          {/* 6 bonus */}
         <article className="card card-bonus">
           <div className="card-sidebar">
             <div className="card-number">BONUS</div>
@@ -440,18 +454,18 @@ function App() {
               </div>
             </div>
           </div>
-        </article>
-      </section>
+          </article>
+        </section>
 
-      <section className="footer">
+        <section className="footer">
         <div className="sig">
           <span>Prepared by</span>
           <span className="sig-name">Brittany Schilling</span>
           <span className="sig-separator">|</span>
           <span className="sig-title">Regional Revenue Manager</span>
         </div>
-        <div className="cheeky">I also used ChatGPT to help me with creating this easy to digest top five list of AI uses as a Pacific Hospitality Group Revenue Manager</div>
-      </section>
+          <div className="cheeky">I also used ChatGPT to help me with creating this easy to digest top five list of AI uses as a Pacific Hospitality Group Revenue Manager</div>
+        </section>
 
       <div className="copy-section">
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -472,7 +486,7 @@ function App() {
           </Link>
         </div>
       </div>
-    </main>
+      </main>
   )
 }
 

@@ -10,6 +10,7 @@ function EmailVersion() {
           <tr>
             <td align="center" style={{ padding: '20px', backgroundColor: '#f5f5f5' }}>
               <table width="600" cellPadding="0" cellSpacing="0" border="0" style={{ maxWidth: '100%' }}>
+                <tbody>
                 <tr>
                   <td align="center">
                     <h1 style={{ 
@@ -29,6 +30,7 @@ function EmailVersion() {
                       marginBottom: '20px'
                     }}>
                       <table cellPadding="0" cellSpacing="0" border="0">
+                        <tbody>
                         <tr>
                           <td style={{ paddingRight: '12px' }}>
                             <img 
@@ -56,10 +58,12 @@ function EmailVersion() {
                             />
                           </td>
                         </tr>
+                        </tbody>
                       </table>
                     </div>
                   </td>
                 </tr>
+                </tbody>
               </table>
             </td>
           </tr>
@@ -70,9 +74,11 @@ function EmailVersion() {
           <tr>
             <td align="center" style={{ padding: '30px 20px', backgroundColor: '#ffffff' }}>
               <table width="600" cellPadding="0" cellSpacing="0" border="0" style={{ maxWidth: '100%' }}>
+                <tbody>
                 <tr>
                   <td style={{ paddingBottom: '20px', borderBottom: '2px solid #e5e7eb' }}>
                     <table width="100%" cellPadding="0" cellSpacing="0" border="0">
+                      <tbody>
                       <tr>
                         <td>
                           <h2 style={{ 
@@ -98,6 +104,7 @@ function EmailVersion() {
                           </div>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
@@ -153,6 +160,7 @@ function EmailVersion() {
                                     {item.desc}
                                   </div>
                                   <table cellPadding="0" cellSpacing="0" border="0">
+                                    <tbody>
                                     <tr>
                                       <td style={{ 
                                         backgroundColor: '#f9f9f9',
@@ -174,6 +182,7 @@ function EmailVersion() {
                                         </span>
                                       </td>
                                     </tr>
+                                    </tbody>
                                   </table>
                                 </td>
                               </tr>
@@ -184,6 +193,7 @@ function EmailVersion() {
                     ))}
                   </td>
                 </tr>
+                </tbody>
               </table>
             </td>
           </tr>
@@ -194,6 +204,7 @@ function EmailVersion() {
           <tr>
             <td align="center" style={{ padding: '30px 20px', backgroundColor: '#f5f5f5' }}>
               <table width="600" cellPadding="0" cellSpacing="0" border="0" style={{ maxWidth: '100%' }}>
+                <tbody>
                 {/* Card 1 */}
                 <tr>
                   <td style={{ paddingBottom: '24px' }}>
@@ -203,6 +214,7 @@ function EmailVersion() {
                       borderRadius: '8px',
                       overflow: 'hidden'
                     }}>
+                      <tbody>
                       <tr>
                         <td width="140" style={{ 
                           backgroundColor: '#fafafa',
@@ -274,6 +286,7 @@ function EmailVersion() {
                             borderTop: '1px solid #e5e7eb',
                             padding: '16px 0'
                           }}>
+                            <tbody>
                             <tr>
                               <td style={{ paddingBottom: '12px' }}>
                                 <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#666666', textTransform: 'uppercase', marginBottom: '4px', fontFamily: 'Arial, sans-serif' }}>
@@ -294,14 +307,15 @@ function EmailVersion() {
                                 </div>
                               </td>
                             </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
 
-                {/* Add similar structure for other cards - simplified for space */}
                 {/* Card 2 */}
                 <tr>
                   <td style={{ paddingBottom: '24px' }}>
@@ -311,6 +325,7 @@ function EmailVersion() {
                       borderRadius: '8px',
                       overflow: 'hidden'
                     }}>
+                      <tbody>
                       <tr>
                         <td width="140" style={{ 
                           backgroundColor: '#fafafa',
@@ -351,6 +366,7 @@ function EmailVersion() {
                             I developed an AI-powered rate-code scraping tool built as a browser-based bookmark utility. The tool quickly retrieves rate code data, helping clarify offer structures, ensure proper rate loading, maintain parity, and reveal competitor promo offer codes. My husband helped with using JavaScript to access API data from Marriott.com and Hyatt.com. This data was previously accessible on Marriott.com, but was recently removed at the end of Q2 during their web update, making this tool necessary.
                           </p>
                           <table width="100%" cellPadding="0" cellSpacing="0" border="0" style={{ backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', padding: '16px 0' }}>
+                            <tbody>
                             <tr>
                               <td style={{ paddingBottom: '12px' }}>
                                 <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#666666', textTransform: 'uppercase', marginBottom: '4px', fontFamily: 'Arial, sans-serif' }}>
@@ -371,9 +387,11 @@ function EmailVersion() {
                                 </div>
                               </td>
                             </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
@@ -387,6 +405,7 @@ function EmailVersion() {
                       borderRadius: '8px',
                       overflow: 'hidden'
                     }}>
+                      <tbody>
                       <tr>
                         <td width="140" style={{ 
                           backgroundColor: '#fafafa',
@@ -430,6 +449,7 @@ function EmailVersion() {
                             It also interpreted STR and Demand 360 reports to deliver deeper insights into market performance, competitive positioning, and weekly performance shifts, enabling more informed, data-driven decisions and assisted in communicating these insights.
                           </p>
                           <table width="100%" cellPadding="0" cellSpacing="0" border="0" style={{ backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', padding: '16px 0' }}>
+                            <tbody>
                             <tr>
                               <td style={{ paddingBottom: '12px' }}>
                                 <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#666666', textTransform: 'uppercase', marginBottom: '4px', fontFamily: 'Arial, sans-serif' }}>
@@ -450,9 +470,11 @@ function EmailVersion() {
                                 </div>
                               </td>
                             </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
@@ -466,6 +488,7 @@ function EmailVersion() {
                       borderRadius: '8px',
                       overflow: 'hidden'
                     }}>
+                      <tbody>
                       <tr>
                         <td width="140" style={{ 
                           backgroundColor: '#fafafa',
@@ -509,6 +532,7 @@ function EmailVersion() {
                             I also leveraged AI when creating pre-arrival emails and guest content.
                           </p>
                           <table width="100%" cellPadding="0" cellSpacing="0" border="0" style={{ backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', padding: '16px 0' }}>
+                            <tbody>
                             <tr>
                               <td style={{ paddingBottom: '12px' }}>
                                 <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#666666', textTransform: 'uppercase', marginBottom: '4px', fontFamily: 'Arial, sans-serif' }}>
@@ -529,9 +553,11 @@ function EmailVersion() {
                                 </div>
                               </td>
                             </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
@@ -545,6 +571,7 @@ function EmailVersion() {
                       borderRadius: '8px',
                       overflow: 'hidden'
                     }}>
+                      <tbody>
                       <tr>
                         <td width="140" style={{ 
                           backgroundColor: '#fafafa',
@@ -588,6 +615,7 @@ function EmailVersion() {
                             This would allow faster, more precise forecasting for both transient and group segments, empowering timely, informed decisions that maximized profitability.
                           </p>
                           <table width="100%" cellPadding="0" cellSpacing="0" border="0" style={{ backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', padding: '16px 0' }}>
+                            <tbody>
                             <tr>
                               <td style={{ paddingBottom: '12px' }}>
                                 <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#666666', textTransform: 'uppercase', marginBottom: '4px', fontFamily: 'Arial, sans-serif' }}>
@@ -608,9 +636,11 @@ function EmailVersion() {
                                 </div>
                               </td>
                             </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
@@ -624,6 +654,7 @@ function EmailVersion() {
                       borderRadius: '8px',
                       overflow: 'hidden'
                     }}>
+                      <tbody>
                       <tr>
                         <td width="140" style={{ 
                           backgroundColor: '#f0f7f7',
@@ -664,6 +695,7 @@ function EmailVersion() {
                             I use agent-style runs to collect rate examples, events, and competitor snapshots in one pass, then capture the sources so follow-up is simple.
                           </p>
                           <table width="100%" cellPadding="0" cellSpacing="0" border="0" style={{ backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', padding: '16px 0' }}>
+                            <tbody>
                             <tr>
                               <td style={{ paddingBottom: '12px' }}>
                                 <div style={{ fontSize: '10px', fontWeight: 'bold', color: '#666666', textTransform: 'uppercase', marginBottom: '4px', fontFamily: 'Arial, sans-serif' }}>
@@ -684,13 +716,15 @@ function EmailVersion() {
                                 </div>
                               </td>
                             </tr>
+                            </tbody>
                           </table>
                         </td>
                       </tr>
+                      </tbody>
                     </table>
                   </td>
                 </tr>
-
+                </tbody>
               </table>
             </td>
           </tr>
@@ -701,6 +735,7 @@ function EmailVersion() {
           <tr>
             <td align="center" style={{ padding: '30px 20px', backgroundColor: '#ffffff', borderTop: '2px solid #e5e7eb' }}>
               <table width="600" cellPadding="0" cellSpacing="0" border="0" style={{ maxWidth: '100%' }}>
+                <tbody>
                 <tr>
                   <td style={{ paddingBottom: '16px', textAlign: 'center' }}>
                     <div style={{ fontSize: '13px', color: '#666666', fontFamily: 'Arial, sans-serif' }}>
@@ -742,6 +777,7 @@ function EmailVersion() {
                     </Link>
                   </td>
                 </tr>
+                </tbody>
               </table>
             </td>
           </tr>
