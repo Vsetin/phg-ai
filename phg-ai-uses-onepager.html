@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Five ways I used AI to elevate revenue management and strategy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --sub: #475569;
+      --brand: #0ea5e9;
+      --brand2: #2563eb;
+      --brand-light: #e0f2fe;
+      --paper: #f8fafc;
+      --card: #ffffff;
+      --line: #e2e8f0;
+      --accent: #06b6d4;
+      --success: #10b981;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    @page { 
+      size: Letter; 
+      margin: 0.5in; 
+    }
+
+    @media print {
+      body { 
+        -webkit-print-color-adjust: exact; 
+        print-color-adjust: exact; 
+      }
+      .toolbar { 
+        display: none !important; 
+      }
+      .page { 
+        box-shadow: none; 
+        margin: 0; 
+      }
+      .card { 
+        break-inside: avoid; 
+      }
+      a { 
+        text-decoration: none; 
+        color: inherit; 
+      }
+      .page.compact { 
+        transform: none; 
+      }
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body { 
+      height: 100%; 
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 768px) {
+      .toolbar {
+        padding: 12px 16px;
+      }
+    }
+
+    .toolbar button {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 10px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--ink);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .toolbar button:hover {
+      background: var(--brand-light);
+      border-color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .toolbar button:active {
+      transform: translateY(0);
+    }
+
+    .page {
+      width: min(1200px, 100% - 32px);
+      max-width: 100%;
+      margin: 32px auto;
+      padding: 48px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow-xl);
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        margin: 16px auto;
+        padding: 24px 20px;
+        border-radius: 20px;
+      }
+    }
+
+    .page.compact {
+      padding: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .page.compact {
+        padding: 20px;
+      }
+    }
+
+    .mast {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 32px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.08) 0%, 
+        rgba(14, 165, 233, 0.06) 50%,
+        rgba(255, 255, 255, 0.9) 100%);
+      border: 1px solid rgba(226, 232, 240, 0.6);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mast::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .mast {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px;
+        margin-bottom: 32px;
+      }
+    }
+
+    .logo {
+      width: 100%;
+      height: 90px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      padding: 8px;
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .title p {
+      margin: 0;
+      color: var(--sub);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 32px 0;
+      }
+    }
+
+    .card {
+      position: relative;
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand2), var(--brand));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      color: var(--ink);
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .card h2 {
+      margin: 0 0 12px 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      margin: 0 0 16px 0;
+      color: var(--sub);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .bullets {
+      margin: 16px 0 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .bullets li {
+      margin: 12px 0;
+      padding-left: 24px;
+      position: relative;
+      color: var(--sub);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    .bullets li strong {
+      color: var(--ink);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 2px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 40px;
+        padding-top: 24px;
+      }
+    }
+
+    .sig {
+      color: var(--sub);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .cheeky {
+      font-size: 13px;
+      color: var(--ink);
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      border: 1px solid var(--line);
+      padding: 14px 18px;
+      border-radius: 12px;
+      line-height: 1.5;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .bonus {
+      border-color: rgba(6, 182, 212, 0.3);
+      background: linear-gradient(135deg, #ecfeff 0%, #ffffff 100%);
+      position: relative;
+    }
+
+    .bonus::before {
+      background: linear-gradient(90deg, var(--accent), #0891b2);
+      opacity: 1;
+    }
+
+    .bonus .tag {
+      background: linear-gradient(135deg, #cffafe, #a5f3fc);
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--sub);
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(226, 232, 240, 0.6);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button id="compactBtn" title="Tighten spacing">Compact</button>
+    <button id="printBtn" title="Print to PDF">Print</button>
+  </div>
+  <main class="page" id="page">
+    <header class="mast">
+      <div class="logo" aria-hidden="true">
+        <img alt="Pacific Hospitality Group" src="data:image/png;base64,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" />
+      </div>
+      <div class="title">
+        <h1>Five ways I used AI to elevate revenue management and strategy</h1>
+        <p>Pacific Hospitality Group  Brittany Schilling</p>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- 1 -->
+      <article class="card">
+        <span class="tag" title="GPT workflow">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/></svg>
+          Hotel promo and rate loading builder
+        </span>
+        <h2>Clean load packs and aligned team communication</h2>
+        <p>I created a customized GPT that turns business ideas for leisure and business travel into load ready specifications. The workflow supports demand generating strategy notes manages the rate loading steps and keeps handoffs and updates consistent across teams. The result is faster turnaround and fewer corrections when sharing promotions and rate details.</p>
+        <ul class="bullets">
+          <li><strong>Estimated time saved each week</strong> about three to five hours during active promo cycles</li>
+          <li><strong>Productivity difference</strong> creation of load packs is about two times faster with thirty to forty percent fewer corrections and clearer cross team visibility</li>
+          <li><strong>Extra learning and growth</strong> stronger grasp of channel rules fences and testing discipline plus clearer templates for future promos</li>
+        </ul>
+      </article>
+
+      <!-- 2 -->
+      <article class="card">
+        <span class="tag" title="Bookmarklet tool">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14v14H5z" stroke="#2563eb" stroke-width="2"/><path d="M7 9h10M7 13h6" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round"/></svg>
+          Rate code scraping tool
+        </span>
+        <h2>One click comp and parity sweeps</h2>
+        <p>I built a browser based bookmark utility that scrapes rate code and price data from target pages. It clarifies offer structures checks parity and can reveal competitor promo codes for review so parity issues and misloads are spotted sooner.</p>
+        <ul class="bullets">
+          <li><strong>Estimated time saved each week</strong> about ninety minutes across comp scans and parity spot checks</li>
+          <li><strong>Productivity difference</strong> comp reviews increase from one to three touch points per week with consistent capture and fewer copy paste errors</li>
+          <li><strong>Extra learning and growth</strong> practical exposure to page structure CSS selectors and small utility scripting</li>
+        </ul>
+      </article>
+
+      <!-- 3 -->
+      <article class="card">
+        <span class="tag" title="Learning coach">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8l8-3 8 3-8 3-8-3z" stroke="#2563eb" stroke-width="2"/><path d="M4 12l8 3 8-3" stroke="#0ea5e9" stroke-width="2"/></svg>
+          Revenue knowledge growth
+        </span>
+        <h2>Study and research coach for reports and standards</h2>
+        <p>I use focused study and research modes to summarize internal SOPs policies brand standards and training resources and to interpret STR and Demand 360 reports. This delivers faster insight on market performance comp positioning and week to week shifts and it helps me communicate the why in weekly updates.</p>
+        <ul class="bullets">
+          <li><strong>Estimated time saved each week</strong> about two to three hours by condensing reading and turning it into step by step actions</li>
+          <li><strong>Productivity difference</strong> faster answers during new tool rollouts and report deep dives with ramp time reduced by about fifty percent</li>
+          <li><strong>Extra learning and growth</strong> deeper intuition for pricing levers and clearer narratives when sharing insights with stakeholders</li>
+        </ul>
+      </article>
+
+      <!-- 4 -->
+      <article class="card">
+        <span class="tag" title="Marketing and comms">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10v4l6 3V7L4 10z" stroke="#2563eb" stroke-width="2"/><path d="M10 8l8-3v14l-8-3" stroke="#0ea5e9" stroke-width="2"/></svg>
+          AI assisted marketing and communication
+        </span>
+        <h2>Hotel tag line builder and guest ready copy</h2>
+        <p>I use AI to craft promo titles and rate details that are eye catching and on brand and to draft pre arrival emails and guest content. Tone and wording are tuned to audiences and channels which speeds up review and keeps messaging consistent.</p>
+        <ul class="bullets">
+          <li><strong>Estimated time saved each week</strong> about one to two hours on copy drafts subject lines and refinement</li>
+          <li><strong>Productivity difference</strong> faster turn of promo pages and emails with stronger consistency and quick suggestions for subject line tests</li>
+          <li><strong>Extra learning and growth</strong> better persuasive writing brand alignment and reusable message blocks for future campaigns</li>
+        </ul>
+      </article>
+
+      <!-- 5 -->
+      <article class="card">
+        <span class="tag" title="Forecast navigator">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18l4-5 3 3 5-7 4 6" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="#0ea5e9" stroke-width="2"/></svg>
+          Revenue and forecasting intelligence GPT
+        </span>
+        <h2>Navigator that aligns OneYield with ProfitSage</h2>
+        <p>I am building a helper that reads two Excel files compares segments balances variances and prepares notes so final entry into ProfitSage is fast and accurate. The aim is to blend historical and forward looking data for both transient and group and to streamline analysis so scenarios are reviewed sooner.</p>
+        <ul class="bullets">
+          <li><strong>Estimated time saved each week</strong> about two to four hours in forecast weeks by automating compare match and variance commentary</li>
+          <li><strong>Productivity difference</strong> quicker scenario review with clear deltas by segment and fewer manual reconciles before entry</li>
+          <li><strong>Extra learning and growth</strong> tighter link between demand drivers forecast choices and accounting impacts</li>
+        </ul>
+      </article>
+
+      <!-- 6 bonus -->
+      <article class="card bonus">
+        <span class="tag" title="Agent mode">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#06b6d4" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#0891b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Bonus  agent mode for quick web scans
+        </span>
+        <h2>Faster comp rate and market pulse checks</h2>
+        <p>I use agent style runs to collect rate examples events and competitor snapshots in one pass and then I capture the sources so follow up is simple.</p>
+        <ul class="bullets">
+          <li><strong>Estimated time saved each week</strong> about one hour on rate shops and comp set sweeps</li>
+          <li><strong>Productivity difference</strong> more frequent pulse checks with tidy source notes that support faster action</li>
+          <li><strong>Extra learning and growth</strong> clearer view of competitor strategies and seasonal patterns across properties</li>
+        </ul>
+        <p class="note">Estimates reflect average weeks and will vary with promo cadence and forecast cycles.</p>
+      </article>
+    </section>
+
+    <section class="footer">
+      <div class="sig">Prepared by Brittany Schilling  Regional Revenue Manager</div>
+      <div class="cheeky">I also used ChatGPT to help me with creating this easy to digest top five list of AI uses as a Pacific Hospitality Group Revenue Manager</div>
+    </section>
+  </main>
+  <script>
+    const page = document.getElementById('page');
+    document.getElementById('printBtn').addEventListener('click', ()=>window.print());
+    document.getElementById('compactBtn').addEventListener('click', ()=>page.classList.toggle('compact'));
+  </script>
+</body>
+</html>
