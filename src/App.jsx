@@ -1,54 +1,6 @@
 import './index.css'
-import { useState } from 'react'
-import html2pdf from 'html2pdf.js'
 
 function App() {
-  const [downloading, setDownloading] = useState(false)
-
-  const downloadPDF = async () => {
-    try {
-      setDownloading(true)
-      const element = document.querySelector('.page')
-      if (!element) return
-
-      // Add print class to enable print styles
-      element.classList.add('pdf-export')
-      
-      const opt = {
-        margin: [0.5, 0.5, 0.5, 0.5],
-        filename: 'PHG_AI_Uses_Report.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-          scale: 2,
-          useCORS: true,
-          letterRendering: true,
-          logging: false,
-          windowWidth: element.scrollWidth,
-          windowHeight: element.scrollHeight
-        },
-        jsPDF: { 
-          unit: 'in', 
-          format: 'letter', 
-          orientation: 'portrait',
-          compress: true
-        },
-        pagebreak: { 
-          mode: ['avoid-all', 'css'],
-          avoid: ['.card', '.mast', '.hero-summary', '.footer', '.card-sidebar', '.card-content']
-        }
-      }
-
-      await html2pdf().set(opt).from(element).save()
-      
-      // Remove print class after export
-      element.classList.remove('pdf-export')
-      setDownloading(false)
-    } catch (err) {
-      console.error('Failed to generate PDF:', err)
-      alert('Failed to generate PDF. Please try again.')
-      setDownloading(false)
-    }
-  }
 
   return (
     <main className="page">
@@ -465,17 +417,6 @@ function App() {
         </div>
           <div className="cheeky">I also used ChatGPT to help me with creating this easy to digest top five list of AI uses as a Pacific Hospitality Group Revenue Manager</div>
         </section>
-
-      <div className="copy-section">
-        <button 
-          className="copy-button" 
-          onClick={downloadPDF}
-          disabled={downloading}
-          aria-label="Download as PDF"
-        >
-          {downloading ? 'Generating PDF...' : 'Download as PDF'}
-        </button>
-      </div>
       </main>
   )
 }
