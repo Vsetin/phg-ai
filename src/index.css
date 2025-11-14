@@ -753,14 +753,47 @@ body {
 }
 
 .card-title-sidebar {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.3;
   color: var(--ink);
   text-align: center;
   margin: 20px 0;
-  padding: 0 8px;
+  padding: 0 4px;
   width: 100%;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Hide sidebar title on desktop, show on mobile */
+@media (min-width: 769px) {
+  .card-title-sidebar {
+    display: none;
+  }
+}
+
+.card-title-content {
+  display: none;
+}
+
+/* Show content title on desktop, hide on mobile */
+@media (min-width: 769px) {
+  .card-title-content {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Hide content title on mobile */
+@media (max-width: 768px) {
+  .card-title-content {
+    display: none;
+  }
 }
 
 .card-number::before {
@@ -1440,7 +1473,8 @@ body {
   }
   
   .card-title-sidebar {
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.25;
   }
   
   .card-bonus .card-number {
