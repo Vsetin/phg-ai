@@ -737,7 +737,7 @@ body {
   color: var(--brand-gold);
   opacity: 0.85;
   letter-spacing: -0.05em;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   width: 100%;
   text-align: center;
   text-shadow: 
@@ -750,6 +750,17 @@ body {
   justify-content: center;
   padding: 16px;
   min-height: 100px;
+}
+
+.card-title-sidebar {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+  text-align: center;
+  margin: 20px 0;
+  padding: 0 8px;
+  width: 100%;
 }
 
 .card-number::before {
@@ -1187,6 +1198,10 @@ body {
     font-size: 42px;
   }
   
+  .card-title-sidebar {
+    font-size: 13px;
+  }
+  
   .time-number {
     font-size: 28px;
   }
@@ -1212,7 +1227,7 @@ body {
   .card-number {
     font-size: 32px;
     width: auto;
-    margin-bottom: 0;
+    margin-bottom: 12px;
     min-height: auto;
     padding: 0;
   }
@@ -1224,6 +1239,13 @@ body {
   
   .card-bonus .card-number {
     font-size: 14px;
+  }
+  
+  .card-title-sidebar {
+    font-size: 13px;
+    margin: 16px 0;
+    padding: 0 4px;
+    text-align: left;
   }
   
   .time-saved {
@@ -1280,7 +1302,7 @@ body {
   .card-number {
     font-size: 32px;
     margin-top: 0;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
     width: 100%;
     text-align: center;
   }
@@ -1288,6 +1310,18 @@ body {
   .card-number::before {
     width: 70px;
     height: 70px;
+  }
+  
+  .card-title-sidebar {
+    font-size: 15px;
+    margin: 20px 0;
+    padding: 0 12px;
+    text-align: center;
+  }
+  
+  .card-title-sidebar .status-badge {
+    display: block;
+    margin-top: 8px;
   }
   
   .time-saved {
@@ -1372,6 +1406,7 @@ body {
   
   .card h2 {
     font-size: 18px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
   
@@ -1402,6 +1437,10 @@ body {
   
   .card-number {
     font-size: 56px;
+  }
+  
+  .card-title-sidebar {
+    font-size: 15px;
   }
   
   .card-bonus .card-number {

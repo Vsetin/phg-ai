@@ -132,6 +132,7 @@ function App() {
           <article className="card">
           <div className="card-sidebar">
             <div className="card-number">01</div>
+            <h2 className="card-title-sidebar">Hotel promo and rate loading builder</h2>
             <div className="time-saved">
               <div className="time-number">3</div>
               <div className="time-unit">hours</div>
@@ -155,7 +156,6 @@ function App() {
             </div>
           </div>
           <div className="card-content">
-            <h2>Hotel promo and rate loading builder</h2>
             <p className="card-description">Streamlined creation and organization of hotel promotions and business travel rate offers</p>
             <div className="card-body">
               <p>I developed a customized GPT that streamlined the creation and organization of hotel promotions and business travel rate offers. This AI-driven process supported demand-generating strategies, managed the rate-loading workflow, and maintained consistent communication across teams.</p>
@@ -178,6 +178,7 @@ function App() {
           <article className="card">
           <div className="card-sidebar">
             <div className="card-number">02</div>
+            <h2 className="card-title-sidebar">Rate code scraping tool</h2>
             <div className="time-saved">
               <div className="time-number">1-2</div>
               <div className="time-unit">hours</div>
@@ -202,7 +203,6 @@ function App() {
             </div>
           </div>
           <div className="card-content">
-            <h2>Rate code scraping tool</h2>
             <p className="card-description">AI-powered browser utility that quickly retrieves rate code data for internal review and competitive analysis</p>
             <div className="card-body">
               <p>I developed an AI-powered rate-code scraping tool built as a browser-based bookmark utility. The tool quickly retrieves rate code data, helping clarify offer structures, ensure proper rate loading, maintain parity, and reveal competitor promo offer codes. My husband helped with using JavaScript to access API data from Marriott.com and Hyatt.com. This data was previously accessible on Marriott.com, but was recently removed at the end of Q2 during their web update, making this tool necessary.</p>
@@ -224,6 +224,7 @@ function App() {
           <article className="card">
           <div className="card-sidebar">
             <div className="card-number">03</div>
+            <h2 className="card-title-sidebar">Revenue knowledge growth</h2>
             <div className="time-saved">
               <div className="time-number">2-3</div>
               <div className="time-unit">hours</div>
@@ -248,7 +249,6 @@ function App() {
             </div>
           </div>
           <div className="card-content">
-            <h2>Revenue knowledge growth</h2>
             <p className="card-description">AI-accelerated learning and simplified information access for faster insights</p>
             <div className="card-body">
               <p>I leveraged AI to accelerate my learning and simplify information access. By referencing internal SOPs, policies, brand standards, and training resources, the system helped quickly find accurate information.</p>
@@ -271,6 +271,7 @@ function App() {
           <article className="card">
           <div className="card-sidebar">
             <div className="card-number">04</div>
+            <h2 className="card-title-sidebar">Rate offer content creation and communication</h2>
             <div className="time-saved">
               <div className="time-number">1-2</div>
               <div className="time-unit">hours</div>
@@ -295,7 +296,6 @@ function App() {
             </div>
           </div>
           <div className="card-content">
-            <h2>Rate offer content creation and communication</h2>
             <p className="card-description">AI-powered content creation for on-brand promotional offers and guest communications</p>
             <div className="card-body">
               <p>I utilized AI to assist in the marketing details of promotional offers by building a Hotel Tag Line Builder GPT to develop promo titles and rate details that were eye-catching and appealing to guests while remaining on-brand and consistent.</p>
@@ -318,6 +318,7 @@ function App() {
           <article className="card">
           <div className="card-sidebar">
             <div className="card-number">05</div>
+            <h2 className="card-title-sidebar">Revenue and forecasting intelligence GPT <span className="status-badge">[IN PROGRESS]</span></h2>
             <div className="time-saved">
               <div className="time-number">5</div>
               <div className="time-unit">Hours</div>
@@ -342,7 +343,6 @@ function App() {
             </div>
           </div>
           <div className="card-content">
-            <h2>Revenue and forecasting intelligence GPT <span className="status-badge">[IN PROGRESS]</span></h2>
             <p className="card-description">Forecast Navigator GPT to integrate historical and forward-looking data for improved forecast accuracy (in progress of building...)</p>
             <div className="card-body">
               <p>I started to build a Forecast Navigator GPT to integrate historical and forward-looking data in an attempt to assist in forecast accuracy. By connecting insights from One Yield's forecasting tools with Profitsage's reporting systems, the goal was to streamline data analysis and projection.</p>
@@ -365,6 +365,7 @@ function App() {
         <article className="card card-bonus">
           <div className="card-sidebar">
             <div className="card-number">BONUS</div>
+            <h2 className="card-title-sidebar">Agent mode for quick web scans</h2>
             <div className="time-saved">
               <div className="time-number">4</div>
               <div className="time-unit">hours</div>
@@ -389,7 +390,6 @@ function App() {
             </div>
           </div>
           <div className="card-content">
-            <h2>Agent mode for quick web scans</h2>
             <p className="card-description">Automated agent runs that collect rate examples, events, and competitor snapshots in one pass</p>
             <div className="card-body">
               <p>I use agent-style runs to collect rate examples, events, and competitor snapshots in one pass, then capture the sources so follow-up is simple.</p>
